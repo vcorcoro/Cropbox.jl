@@ -92,7 +92,8 @@ analyze(S::Type{<:System}, configs::Vector; target, parameters, method, option=(
     if a isa GlobalSensitivity.MorrisResult
         DataFrame(system = KS, parameter = KP, means = a.means[1,:], means_star = a.means_star[1,:], variances = a.variances[1,:])
     elseif a isa GlobalSensitivity.SobolResult
-        DataFrame(system = KS, parameter = KP, ST = a.ST, S1 = a.S1)
+        DataFrame(system = KS, parameter = KP, ST = a.ST, S1 = a.S1, ST_Conf_Int = a.ST_Conf_Int, S1_Conf_Int = a.S1_Conf_Int)
+        
     else
         a
     end
