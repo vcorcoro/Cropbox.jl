@@ -80,7 +80,7 @@ analyze(S::Type{<:System}, configs::Vector; target, parameters, method, option=(
         GlobalSensitivity.Morris(; option...)
     elseif method == :Sobol
         GlobalSensitivity.Sobol(; option...)
-    elseif method <: GlobalSensitivity.GSAMethod
+    elseif method isa GlobalSensitivity.GSAMethod
         method
     else
         @error "unknown method" method
