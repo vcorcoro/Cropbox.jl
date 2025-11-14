@@ -93,7 +93,8 @@ analyze(S::Type{<:System}, configs::Vector; target, parameters, method, option=(
         DataFrame(system = KS, parameter = KP, means = a.means[1,:], means_star = a.means_star[1,:], variances = a.variances[1,:])
     elseif a isa GlobalSensitivity.SobolResult
         DataFrame(system = KS, parameter = KP, ST = a.ST, S1 = a.S1, ST_Conf_Int = a.ST_Conf_Int, S1_Conf_Int = a.S1_Conf_Int)
-        
+    elseif a isa GlobalSensitivity.eFASTResult
+        DataFrame(system = KS, parameter = KP, ST = a.ST[1,:], S1 = a.S1[1,:])
     else
         a
     end
