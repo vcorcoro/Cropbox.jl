@@ -14,7 +14,7 @@ timeunit(::Type{<:DailyClock}) = u"d"
 @system DailyClock{timeunit = timeunit(DailyClock)}(Clock) <: Clock
 
 abstract type MinuteClock <: Clock end
-timeunit(::Type{<:MinuteClock}) = u"d"
+timeunit(::Type{<:MinuteClock}) = u"minute"
 @system MinuteClock{timeunit = timeunit(MinuteClock)}(Clock) <: Clock
 
 timeunit(c::C) where {C<:Clock} = timeunit(C)
