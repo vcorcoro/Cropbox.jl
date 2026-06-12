@@ -5,6 +5,7 @@ import Random
     context(config) ~ ::Context(context)
 end
 
+@system MinuteController{Context => MinuteContext}(Controller) <: Controller
 """
     instance(S; <keyword arguments>) -> S
 
