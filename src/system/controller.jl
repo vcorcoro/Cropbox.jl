@@ -45,4 +45,4 @@ instance(S::Type{<:System}; config=(), options=(), seed=nothing) = begin
     update!(s)
 end
 
-export Controller, instance
+export Controller, MinuteController, instance
