@@ -498,7 +498,7 @@ end
 source(s::S) where {S<:System} = source(S)
 source(::Type{S}) where {S<:System} = source(typefor(S))
 source(::Type{System}) = quote
-    context ~ ::Type{<:Context}(override)
+    context ~ <:Context(override)
     config(context) => context.config ~ ::Config
 end
 source(::Type) = :()
