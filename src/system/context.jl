@@ -6,6 +6,7 @@ end
 
 #TODO: remove once Context and Clock get merged
 @system DailyContext{Clock => DailyClock}(Context) <: Context
+@system MinuteContext{Clock => MinuteClock}(Context) <: Context
 
 timeunit(c::Context) = timeunit(c.clock)
 
