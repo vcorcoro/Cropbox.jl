@@ -153,7 +153,7 @@ calibrate(S::Type{<:System}, obs::DataFrame, configs::Vector; index=nothing, tar
     optim_default = (;
         MaxSteps=5000,
         TraceInterval=10,
-        RandomizeRngSeed=false,
+        # RandomizeRngSeed=false,
     )
     #HACK: always initialize random seed first on our end regardless of RandomizeRngSeed option
     # https://github.com/robertfeldt/BlackBoxOptim.jl/issues/158
